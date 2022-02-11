@@ -34,7 +34,7 @@ model Token {
 model Note {
   id         String   @id @default(cuid())
   title      String
-  content    String
+  content    String   @db.MediumText // 16,777,215 bytes (~16MB)
   User       User     @relation(fields: [userId], references: [id])
   userId     String
   createdAt  DateTime @default(now())
