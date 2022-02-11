@@ -122,7 +122,7 @@ function Note({ note, setDiscover, updateNote, deleteNote }) {
       setDiscover(discover);
     }, 250);
     return () => clearTimeout(delayed);
-  }, [content]);
+  }, [content, note, setDiscover]);
 
   return (
     <>
@@ -363,8 +363,8 @@ function NotesPage() {
         </div>
         <hr />
         <ul role="list" className="divide-y divide-gray-200">
-          {snippets.map((snippet) => (
-            <li className="py-4 px-4">
+          {snippets.map((snippet, i) => (
+            <li className="py-4 px-4" key={i}>
               <p className="mt-2 text-sm leading-5">{snippet.content}</p>
               {/* Source */}
               <div className="mt-2 flex items-center text-sm leading-5 text-gray-500">
