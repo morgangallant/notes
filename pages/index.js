@@ -122,7 +122,7 @@ function Note({ note, setDiscover, updateNote, deleteNote }) {
       setDiscover(discover);
     }, 250);
     return () => clearTimeout(delayed);
-  }, [content, note, setDiscover]);
+  }, [content]);
 
   return (
     <>
